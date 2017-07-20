@@ -14,4 +14,9 @@ export class FaqListComponent implements OnInit {
     console.log(this.faqsData.faqs);
   }
 
+  setActive(evt) {
+    console.log(evt.question);
+    this.faqsData.setActive(evt);
+  }
+
 }

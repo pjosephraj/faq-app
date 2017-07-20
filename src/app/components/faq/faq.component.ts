@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-faq',
@@ -7,6 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FaqComponent implements OnInit {
   @Input() faq;
+  @Output() setActive = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
