@@ -1,5 +1,5 @@
 <div class="card">
-  <div class="card-header" (click)="faq.show=!faq.show; setActive.emit({question: faq.question})">
+  <div class="card-header" (click)="faq.show=!faq.show;">
     {{faq.question}}
   </div>
   <div class="card-block" [ngClass]="{active:faq.show}">

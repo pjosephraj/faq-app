@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
+import { Faq } from '../../models/Faq';
 
 @Component({
   selector: 'app-faq-form',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./faq-form.component.css']
 })
 export class FaqFormComponent implements OnInit {
-
-  constructor() { }
+  faq: Faq;
+  @Output() addFaq= new EventEmitter();
+  constructor() {
+    this.faq = {
+      question: '',
+      answer: '',
+      show: false
+    };
+  }
 
   ngOnInit() {
+  }
+
+  submitFaq(faq) {
+    console.log(faq);
+    this.addFaq.emit(faq);
   }
 
 }

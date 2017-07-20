@@ -1,15 +1,15 @@
 <div class="card">
   <div class="card-block">
-    <h4 class="card-title">Create FAQ</h4>
+    <h4 class="card-title">Create FAQ - {{faq.show}}</h4>
     <hr>
-    <form>
+    <form (submit)="submitFaq(faq);">
       <div class="form-group">
         <label>Question</label>
-        <input type="text" class="form-control" placeholder="Type question">
+         <input name="question" type="text" class="form-control" placeholder="Type question" [(ngModel)]="faq.question"> 
       </div>
       <div class="form-group">
         <label>Answer</label>
-        <input type="text" class="form-control" placeholder="Type answer">
+         <input name="answer" type="text" class="form-control" placeholder="Type answer" [(ngModel)]="faq.answer"> 
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>

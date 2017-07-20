@@ -19,7 +19,8 @@ import { FaqsService } from './services/faqs.service';
     FaqComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     FaqsService

@@ -13,7 +13,6 @@ export class FaqsService {
   }
 
   setActive(ques) {
-    console.log(ques);
     this.faqs = this.faqs.map((faq) => {
       if (faq.question === ques.question) {
         return Object.assign({}, faq, {show: true});
@@ -21,6 +20,10 @@ export class FaqsService {
         return Object.assign({}, faq, {show: false});
       }
     });
-    console.log(this.faqs);
+  }
+
+  addFaq(faq) {
+    console.log(faq);
+    this.faqs.unshift(faq);
   }
 }
