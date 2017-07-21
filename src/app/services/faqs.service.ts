@@ -5,11 +5,12 @@ import { Faq } from '../models/Faq';
 export class FaqsService {
   faqs: Faq[];
   constructor() {
-    this.faqs = [
-      {question: 'What is your name?', answer: 'My name is Brad', show: false },
-      {question: 'What is your favorite color?', answer: 'My favorite color is red', show: false },
-      {question: 'What is your favorite language?', answer: 'My favorite language is JavaScript', show: false }
-    ];
+    if (localStorage.faqs) {
+      this.faqs = JSON.parse(localStorage.faqs);
+    }else {
+      this.faqs = [];
+      localStorage.faqs = JSON.stringify(this.faqs);
+    }
   }
 
   setActive(ques) {
@@ -23,7 +24,14 @@ export class FaqsService {
   }
 
   addFaq(faq) {
-    console.log(faq);
     this.faqs.unshift(faq);
+    if (localStorage.faqs) {
+      localStorage.faqs = JSON.stringify(this.faqs);
+    }
+  }
+
+  removeFaq(rFaq) {
+    this.faqs = this.faqs.filter((faq) => faq.question !== rFaq.question);
+    localStorage.faqs = JSON.stringify(this.faqs);
   }
 }

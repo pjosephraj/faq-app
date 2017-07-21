@@ -7,11 +7,10 @@ import { FaqsService } from './services/faqs.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(public faqService: FaqsService) {
-
+  constructor(public faqsData: FaqsService) {
   }
 
   addFaq(faq) {
-    this.faqService.addFaq(faq);
+    this.faqsData.addFaq(faq);
   }
 }

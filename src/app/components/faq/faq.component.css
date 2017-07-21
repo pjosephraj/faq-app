@@ -11,6 +11,7 @@
   opacity: 1;
 }
 
-.card-header{
+.card-header, button{
   cursor: pointer;
 }
+

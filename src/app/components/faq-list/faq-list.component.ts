@@ -11,7 +11,10 @@ export class FaqListComponent implements OnInit {
   constructor(public faqsData: FaqsService) { }
 
   ngOnInit() {
-    console.log(this.faqsData.faqs);
+  }
+
+  removeFaq(faq) {
+    this.faqsData.removeFaq(faq);
   }
 
 }

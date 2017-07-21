@@ -1,5 +1,5 @@
 <div class="card">
   <div class="card-block">
-    <app-faq *ngFor="let faq of faqsData.faqs" [faq]="faq" (setActive)="setActive($event)"></app-faq>
+    <app-faq *ngFor="let faq of faqsData.faqs" [faq]="faq" (setActive)="setActive($event)" (removeFaq)="removeFaq($event)"></app-faq>
   </div>
 </div>

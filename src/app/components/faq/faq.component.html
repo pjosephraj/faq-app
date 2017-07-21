@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header" (click)="faq.show=!faq.show;">
-    {{faq.question}}
+    {{faq.question}} <button style="float: right" type="button" class="btn btn-danger btn-sm btn-delete" (click)="deleteFaq($event, faq)" >Delete</button>
   </div>
   <div class="card-block" [ngClass]="{active:faq.show}">
     {{faq.answer}}

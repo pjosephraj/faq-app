@@ -22,8 +22,18 @@ export class FaqFormComponent implements OnInit {
   }
 
   submitFaq(faq) {
-    console.log(faq);
-    this.addFaq.emit(faq);
+    if (faq.question.length && faq.answer.length) {
+      this.addFaq.emit(faq);
+      this.faq = { question: '', answer: '', show: false };
+    }else {
+      if (!faq.question.length && !faq.answer.length) {
+        alert('Please enter question and answer...');
+      }else if (!faq.answer.length) {
+        alert('Please enter answer...');
+      }else {
+        alert('Please enter question...');
+      }
+    }
   }
 
 }
